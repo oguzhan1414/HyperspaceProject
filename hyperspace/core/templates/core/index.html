@@ -18,11 +18,15 @@
 			<div class="features">
 				
 				{%for service in featured_services %}
+				
 				<section>
+					<a href="{% url 'service_details' service.slug %}">
 					<span class="{{service.icon_class}}"></span>
 					<h3>{{service.title}}</h3>
-					<p>{{service.description}}</p>
+					<p>{{service.description|truncatechars:100}}</p>
+					<a/>
 				</section>
+				
                 {%endfor%}
 			
 			</div>
